@@ -1,12 +1,14 @@
 import { ContainerStyle } from "./Styled/Container.style";
-import { Home } from "./Pages/Home";
 import { Navbar } from "./Components/Navbar";
+import { AppRouter } from "./Routing/AppRouter";
+import { Footer } from "./Components/Footer";
 
 function App() {
 	return (
 		<ContainerStyle>
 			<Navbar />
-			<Home></Home>
+			<AppRouter />
+			<Footer />
 		</ContainerStyle>
 	);
 }

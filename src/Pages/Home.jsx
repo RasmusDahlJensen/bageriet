@@ -1,3 +1,5 @@
+import { PageStyle } from "./Page.Style";
+
 export const Home = () => {
-	return <div></div>;
+	return <PageStyle>Home</PageStyle>;
 };
