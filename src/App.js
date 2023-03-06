@@ -6,7 +6,6 @@ import { Footer } from "./Components/Footer";
 function App() {
 	return (
 		<ContainerStyle>
-			<Navbar />
 			<AppRouter />
 			<Footer />
 		</ContainerStyle>

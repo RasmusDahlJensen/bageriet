@@ -7,19 +7,19 @@ export const Navbar = () => {
 			<NavbarStyle>
 				<ul>
 					<li>
-						<NavLink to="">FORSIDE</NavLink>
+						<NavLink to="/">FORSIDE</NavLink>
 					</li>
 					<li>
-						<NavLink to="contact">KONTAKT</NavLink>
+						<NavLink to="/contact">KONTAKT</NavLink>
 					</li>
 				</ul>
 				<h1>bageriet</h1>
 				<ul>
 					<li>
-						<NavLink to="product">PRODUKTER</NavLink>
+						<NavLink to="/product">PRODUKTER</NavLink>
 					</li>
 					<li>
-						<NavLink to="login">LOGIN</NavLink>
+						<NavLink to="/login">LOGIN</NavLink>
 					</li>
 				</ul>
 			</NavbarStyle>
