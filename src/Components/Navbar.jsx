@@ -4,7 +4,7 @@ import { NavbarStyle } from "./Navbar.style";
 export const Navbar = () => {
 	return (
 		<>
-			<NavbarStyle>
+			<NavbarStyle id="top">
 				<ul>
 					<li>
 						<NavLink to="/">FORSIDE</NavLink>

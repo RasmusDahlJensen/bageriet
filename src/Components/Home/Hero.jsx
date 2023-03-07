@@ -5,7 +5,7 @@ import { HeroImg } from "./HeroImg.style";
 export const Hero = () => {
 	return (
 		<HeroImg>
-			<HeroStyle>
+			<HeroStyle id="top">
 				<ul>
 					<li>
 						<NavLink to="">FORSIDE</NavLink>

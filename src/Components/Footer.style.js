@@ -18,6 +18,15 @@ export const FooterStyle = styled.footer`
 			font-family: ${(props) => props.theme.fonts[0]};
 			font-size: xx-large;
 		}
+		svg {
+			position: relative;
+			z-index: 999999;
+			bottom: 50%;
+		}
+		a {
+			margin: 0;
+			padding: 0;
+		}
 	}
 	.footerTwo {
 		background-color: ${(props) => props.theme.colors.quaternary};

@@ -14,12 +14,12 @@ html, body{
 }
 
 #root{
-	/* width: 100%; */
+	width: 100%;
 	min-height: 100%;
-	display: grid;
+	/* display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto 1fr auto;
-	gap: 1rem;
+	gap: 1rem; */
 }
 
 h1, h2, h3, h4{

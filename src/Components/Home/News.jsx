@@ -1,4 +1,4 @@
-import { NewsStyle, ArticleStyle, ArticleFlex } from "./News.style";
+import { NewsStyle, ArticleStyle, ArticleContainer } from "./News.style";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -14,15 +14,20 @@ export const News = (props) => {
 		});
 	}, []);
 
-	return <></>;
+	return (
+		<ArticleContainer>
+			<h2>Nyheder</h2>
+			<NewsStyle>
+				{news.map((news) => {
+					return (
+						<ArticleStyle key={news.id}>
+							<img src={news.image} alt="News" />
+							<h5>{news.title}</h5>
+							<p>{news.teaser}</p>
+						</ArticleStyle>
+					);
+				})}
+			</NewsStyle>
+		</ArticleContainer>
+	);
 };
-
-// {news.map((news) => {
-// 	return (
-// 		<ArticleStyle key={news.id}>
-// 			<img src={news.image} alt="" />
-// 			<h5>{news.title}</h5>
-// 			<p>{news.teaser}</p>
-// 		</ArticleStyle>
-// 	);
-// })}
