@@ -9,7 +9,7 @@ export const News = (props) => {
 
 	useEffect(() => {
 		axios.get(url).then((data) => {
-			console.log(data.data.items.slice(0, 3));
+			// console.log(data.data.items.slice(0, 3));
 			setNews(data.data.items.slice(0, 3));
 		});
 	}, []);
