@@ -1,9 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { HeroStyle } from "./Hero.style";
+import { HeroImg } from "./HeroImg.style";
 
 export const Hero = () => {
 	return (
-		<>
+		<HeroImg>
 			<HeroStyle>
 				<ul>
 					<li>
@@ -24,6 +25,6 @@ export const Hero = () => {
 				</ul>
 				<Outlet />
 			</HeroStyle>
-		</>
+		</HeroImg>
 	);
 };

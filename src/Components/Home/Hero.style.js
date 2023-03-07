@@ -6,6 +6,7 @@ export const HeroStyle = styled.nav`
 	justify-content: center;
 	align-items: center;
 	height: 100px;
+	background-position: center;
 	ul {
 		display: flex;
 		align-items: center;

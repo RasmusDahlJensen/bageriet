@@ -1,15 +1,13 @@
 import { PageStyle } from "./Page.Style";
-import { HomeStyle } from "./Home.style";
 import { Hero } from "../Components/Home/Hero";
+import { News } from "../Components/Home/News";
+import { Form } from "../Components/Home/Form";
 
 export const Home = () => {
 	return (
 		<PageStyle>
-			<HomeStyle>
-				<nav className="bgimg">
-					<Hero />
-				</nav>
-			</HomeStyle>
+			<News />
+			<Form />
 		</PageStyle>
 	);
 };
