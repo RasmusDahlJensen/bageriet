@@ -12,6 +12,7 @@ function App() {
 				<Route path="/contact" element={<Navbar />} />
 				<Route path="/product" element={<Navbar />} />
 				<Route path="/login" element={<Navbar />} />
+				<Route path="/details" element={<Navbar />} />
 			</Routes>
 			<AppRouter />
 			<Footer />

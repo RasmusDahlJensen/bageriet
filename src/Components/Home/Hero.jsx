@@ -1,6 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { HeroStyle } from "./Hero.style";
-import { HeroImg } from "./HeroImg.style";
+import { HeroStyle, HeroImg } from "./Hero.style";
 
 export const Hero = () => {
 	return (

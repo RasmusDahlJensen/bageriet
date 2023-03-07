@@ -22,12 +22,13 @@ export const NavbarStyle = styled.nav`
 		color: black;
 		text-decoration: none;
 		font-weight: 300;
+		font-size: 1.2rem;
 	}
 	a:hover {
 		text-decoration: underline;
 	}
 	h1 {
-		font-size: xxx-large;
+		font-size: 4rem;
 		margin: 0 2.5% 0 2.5%;
 		font-family: ${(props) => props.theme.fonts[0]};
 	}

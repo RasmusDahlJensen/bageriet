@@ -4,6 +4,7 @@ import FormBg from "../../Assets/images/newsletterbg.jpg";
 export const FormContainerStyle = styled.div`
 	background-image: url(${FormBg});
 	background-position: center;
+	background-repeat: no-repeat;
 	height: 500px;
 	width: 100%;
 	display: flex;

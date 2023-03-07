@@ -1,6 +1,11 @@
-import { NewProductStyle, ProductStyle } from "./NewProducts.style";
+import {
+	CommentStyle,
+	ProductContainerStyle,
+	ProductStyle,
+} from "./NewProducts.style";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const url = "https://api.mediehuset.net/bakeonline/products";
 
 export const NewProducts = () => {
@@ -8,25 +13,25 @@ export const NewProducts = () => {
 
 	useEffect(() => {
 		axios.get(url).then((data) => {
-			console.log(data.data.items.slice(0, 6));
+			// console.log(data.data.items.slice(0, 6));
 			setProduct(data.data.items.slice(0, 6));
 		});
 	}, []);
 
 	return (
-		<NewProductStyle>
+		<ProductContainerStyle>
 			<h2>Nyeste bagværk</h2>
 			<div>
 				{product.map((product) => {
 					return (
 						<ProductStyle key={product.id}>
 							<img src={product.image.fullpath} alt="product" />
-							<div>
-								{product.num_comments}
+							<CommentStyle>
+								<p>{product.num_comments}</p>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									width="28.286"
-									height="22"
+									width="35"
+									height="35"
 									viewBox="0 0 28.286 22"
 								>
 									<path
@@ -37,14 +42,16 @@ export const NewProducts = () => {
 										fill="#bbc8d4"
 									/>
 								</svg>
-							</div>
-                            <h5>{product.title}</h5>
-                            <p>{product.teaser}</p>
-                            <button>SE MERE</button>
+							</CommentStyle>
+							<h5>{product.title}</h5>
+							<p>{product.teaser}</p>
+							<Link to="/details" state={{ id: product.id }}>
+								<button>SE MERE</button>
+							</Link>
 						</ProductStyle>
 					);
 				})}
 			</div>
-		</NewProductStyle>
+		</ProductContainerStyle>
 	);
 };
