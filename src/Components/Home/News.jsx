@@ -1,33 +1,28 @@
-import { Article } from "./Article";
-import { NewsStyle } from "./News.style";
-import articleOne from "../../Assets/images/products/article.jpg";
-import articleTwo from "../../Assets/images/products/article2.jpg";
-import articleThree from "../../Assets/images/products/article3.jpg";
+import { NewsStyle, ArticleStyle, ArticleFlex } from "./News.style";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const url = "https://api.mediehuset.net/bakeonline/news";
 
 export const News = (props) => {
-	return (
-		<NewsStyle>
-			<h2>Nyheder</h2>
-			<div className="articleFlex">
-				<Article
-					title="KREATIVITET DYRKES"
-					description="Der er mange tilgængelige udgaver af 
-Lorem Ipsum, men de fleste udgaver har gennemgået forandringer, når nogen har"
-					img={articleOne}
-				/>
-				<Article
-					title="VI ELSKER BRØD"
-					description="Der er mange tilgængelige udgaver af 
-Lorem Ipsum, men de fleste udgaver har gennemgået forandringer, når nogen har"
-					img={articleTwo}
-				/>
-				<Article
-					title="SANS FOR DETALJEN"
-					description="Der er mange tilgængelige udgaver af 
-Lorem Ipsum, men de fleste udgaver har gennemgået forandringer, når nogen har"
-					img={articleThree}
-				/>
-			</div>
-		</NewsStyle>
-	);
+	const [news, setNews] = useState([]);
+
+	useEffect(() => {
+		axios.get(url).then((data) => {
+			console.log(data.data.items.slice(0, 3));
+			setNews(data.data.items.slice(0, 3));
+		});
+	}, []);
+
+	return <></>;
 };
+
+// {news.map((news) => {
+// 	return (
+// 		<ArticleStyle key={news.id}>
+// 			<img src={news.image} alt="" />
+// 			<h5>{news.title}</h5>
+// 			<p>{news.teaser}</p>
+// 		</ArticleStyle>
+// 	);
+// })}
