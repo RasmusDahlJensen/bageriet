@@ -3,7 +3,7 @@ import { Home } from "../Pages/Home";
 import { Contact } from "../Pages/Contact";
 import { Login } from "../Pages/Login";
 import { Products } from "../Pages/Products";
-import { ProductDetails } from "../Components/Products/ProductDetails";
+import { ProductDetails } from "../Pages/ProductDetails";
 
 export const AppRouter = () => {
 	return (
