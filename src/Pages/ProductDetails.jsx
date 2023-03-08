@@ -11,7 +11,7 @@ export const ProductDetails = () => {
 	const [product, getProduct] = useState([]);
 	useEffect(() => {
 		axios.get(url).then((data) => {
-			// console.log(data.data);
+			console.log(data.data);
 			getProduct(data.data.item);
 			setLoading(false);
 		});
