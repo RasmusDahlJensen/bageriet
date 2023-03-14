@@ -7,16 +7,19 @@ import { GlobalStyle } from "./Styled/Global.style";
 import { ThemeProvider } from "styled-components";
 import { Theme } from "./Styled/Theme";
 import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./Components/Login/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<ThemeProvider theme={Theme}>
-			<GlobalStyle />
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</ThemeProvider>
+		<AuthProvider>
+			<ThemeProvider theme={Theme}>
+				<GlobalStyle />
+				<BrowserRouter>
+					<App />
+				</BrowserRouter>
+			</ThemeProvider>
+		</AuthProvider>
 	</React.StrictMode>
 );
 
