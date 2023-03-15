@@ -43,4 +43,9 @@ export const ProductNavStyle = styled.nav`
 		text-decoration: underline;
 		font-size: 1.3rem;
 	}
+	.active {
+		font-weight: 800;
+		text-decoration: underline;
+		font-size: 1.3;
+	}
 `;
