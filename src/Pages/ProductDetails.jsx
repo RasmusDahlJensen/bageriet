@@ -42,7 +42,7 @@ export const ProductDetails = () => {
 
 	return (
 		<PageStyle>
-			<h5>{product.title}</h5>
+			<h5>{product.title} </h5>
 			<DetailFlexStyle>
 				<BreadContainerStyle>
 					<div>

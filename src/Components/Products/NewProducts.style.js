@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const ProductContainerStyle = styled.div`
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin: 20px 0 50px 0;
+	align-items: flex-start;
+	flex-wrap: wrap;
 	> div {
 		display: flex;
 		flex-wrap: wrap;
