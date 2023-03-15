@@ -16,7 +16,7 @@ export const Navbar = () => {
 				<h1>bageriet</h1>
 				<ul>
 					<li>
-						<NavLink to="/product">PRODUKTER</NavLink>
+						<NavLink to="/product/1">PRODUKTER</NavLink>
 					</li>
 					<li>
 						<NavLink to="/login">LOGIN</NavLink>

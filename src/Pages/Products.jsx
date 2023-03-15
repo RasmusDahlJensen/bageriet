@@ -58,5 +58,6 @@ const ProductCategories = () => {
 
 export const ProductList = () => {
 	const params = useParams();
+	// console.log(params.cat_id);
 	return <div>Products: {JSON.stringify(params)}</div>;
 };
