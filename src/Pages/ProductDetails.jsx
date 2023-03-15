@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import {
 	PageStyle,
 	BreadContainerStyle,
@@ -10,9 +10,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const ProductDetails = () => {
-	const { state: { id } = {} } = useLocation();
-	// console.log(id);
-	const url = `https://api.mediehuset.net/bakeonline/products/${id}`;
+	const params = useParams();
+
+	const url = `https://api.mediehuset.net/bakeonline/products/${params.prod_id}`;
 	const [isLoading, setLoading] = useState(true);
 	const [product, getProduct] = useState([]);
 	useEffect(() => {
