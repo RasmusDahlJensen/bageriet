@@ -18,10 +18,6 @@ export const Products = () => {
 		<PageStyle>
 			<HeaderProductStyle>
 				<h2>Produkter</h2>
-				<p>
-					Det er sød musik for smagsløgene at bage hjemmelavede horn, prøv disse
-					lækre morgenhorn.
-				</p>
 			</HeaderProductStyle>
 			<ProductGridStyle>
 				<ProductNavStyle>

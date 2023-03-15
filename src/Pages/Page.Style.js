@@ -7,7 +7,6 @@ export const PageStyle = styled.div`
 		font-size: 1.3rem;
 		margin: 10px;
 	}
-
 `;
 
 export const BreadContainerStyle = styled.div`
@@ -50,5 +49,11 @@ export const LikeButtonStyle = styled.button`
 
 export const DetailFlexStyle = styled.div`
 	display: flex;
+	gap: 15px;
+`;
+
+export const DetailFlexStyleTitle = styled.div`
+	display: flex;
+	flex-direction: column;
 	gap: 15px;
 `;
