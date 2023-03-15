@@ -15,7 +15,16 @@ export const HeaderProductStyle = styled.div`
 	}
 `;
 
-export const ProductStyle = styled.div``;
+export const ProductStyle = styled.div`
+	max-width: 1500px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 10% 90%;
+	grid-template-rows: 1fr;
+	grid-column-gap: 30px;
+	grid-row-gap: 0px;
+	height: 100%;
+`;
 
 export const ProductNavStyle = styled.nav`
 	display: flex;
