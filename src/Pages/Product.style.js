@@ -20,7 +20,6 @@ export const ProductGridStyle = styled.div`
 	max-width: 1700px;
 	margin: auto;
 	display: grid;
-	/* grid-template-columns: 10% 90%; */
 	grid-template-columns: 1fr 7fr;
 	grid-template-rows: 1fr;
 	grid-column-gap: 30px;
