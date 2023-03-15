@@ -105,7 +105,7 @@ export const ProductList = () => {
 						</CommentStyle>
 						<h5>{product.title}</h5>
 						<p>{product.teaser}</p>
-						<Link to="/details" state={{ id: product.id }}>
+						<Link to={`/product/details/${product.id}`}>
 							<button>SE MERE</button>
 						</Link>
 					</ProductStyle>

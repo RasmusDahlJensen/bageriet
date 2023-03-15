@@ -14,6 +14,7 @@ export const AppRouter = () => {
 			<Route path="/login" element={<Login />} />
 			<Route path="/product" element={<Products />}>
 				<Route path=":cat_id" element={<ProductList />} />
+				<Route path=":cat_id/:prod_id" element={<ProductDetails />} />
 			</Route>
 			<Route path="/details" element={<ProductDetails />} />
 			<Route path="*" element={<NotFound />} />
