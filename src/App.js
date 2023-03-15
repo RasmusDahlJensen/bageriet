@@ -13,6 +13,7 @@ function App() {
 				<Route path="/product" element={<Navbar />} />
 				<Route path="/login" element={<Navbar />} />
 				<Route path="/details" element={<Navbar />} />
+				<Route path="*" element={<Navbar />} />
 			</Routes>
 			<AppRouter />
 			<Footer />

@@ -7,6 +7,7 @@ export const PageStyle = styled.div`
 		font-size: 1.3rem;
 		margin: 10px;
 	}
+
 `;
 
 export const BreadContainerStyle = styled.div`
