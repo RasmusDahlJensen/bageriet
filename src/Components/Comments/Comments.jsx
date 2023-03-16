@@ -16,20 +16,20 @@ export const Comments = () => {
 		headers: { Authorization: `Bearer ${accessToken}` },
 	};
 
-	let url = `https://api.mediehuset.net/bakeonline/comments/${userId}`;
+	let userUrl = `https://api.mediehuset.net/bakeonline/comments/1`;
+	let commentUrl = `https://api.mediehuset.net/bakeonline/comments`;
 
 	const [comments, getComments] = useState([]);
 
 	useEffect(() => {
-		axios.get(url, config).then((data) => {
-			// console.log(data);
+		axios.get(userUrl, config).then((data) => {
+			console.log(data);
 			getComments(data);
 			// console.log(comments);
 		});
 	}, []);
 
 	const submitComment = (e) => {
-		//Posted information taken from the form and the login
 		let bodyParameters = {
 			title: `${e.target.form.title.value}`,
 			comment: `${e.target.form.comment.value}`,
@@ -37,12 +37,12 @@ export const Comments = () => {
 			product_id: `${params.prod_id}`,
 			active: true,
 		};
-		console.log(bodyParameters);
-		console.log(config);
-		//Post comment
+		// console.log(bodyParameters);
+		// console.log(config);
+		// Post comment
 
 		axios
-			.post(url, config, bodyParameters)
+			.post(commentUrl, bodyParameters, config)
 			.then(console.log)
 			.catch((err) => console.error(err));
 	};
