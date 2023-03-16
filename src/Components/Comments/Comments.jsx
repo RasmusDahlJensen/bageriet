@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { CommentStyle, FormStyle } from "./Comment.style";
+import { CommentContainer, CommentStyle, FormStyle } from "./Comment.style";
 import { AuthContext } from "../Login/AuthProvider";
 import axios from "axios";
+import pfp from "../../Assets/images/pfpplaceholder.png";
 
 export const Comments = () => {
 	const params = useParams();
@@ -21,14 +22,16 @@ export const Comments = () => {
 
 	const [comments, getComments] = useState([]);
 
+	//grab all user comments for the product that's currently being visited
 	useEffect(() => {
 		axios.get(productUrl, config).then((data) => {
-			console.log(data);
-			getComments(data);
-			// console.log(comments);
+			getComments(data.data.items);
+			console.log(comments);
 		});
 	}, []);
 
+	//Submits the commment that has been written down with user id, though there's nothing stopping you
+	//from submitting an empty comment
 	const submitComment = (e) => {
 		let bodyParameters = {
 			title: `${e.target.form.title.value}`,
@@ -37,10 +40,6 @@ export const Comments = () => {
 			product_id: `${params.prod_id}`,
 			active: true,
 		};
-		// console.log(bodyParameters);
-		// console.log(config);
-		// Post comment
-
 		axios
 			.post(commentUrl, bodyParameters, config)
 			.then(console.log)
@@ -48,7 +47,7 @@ export const Comments = () => {
 	};
 
 	return (
-		<CommentStyle>
+		<CommentContainer>
 			<FormStyle>
 				<div className="title">
 					<input type="text" id="title" placeholder="Titel.." />
@@ -59,13 +58,30 @@ export const Comments = () => {
 						id="comment"
 						cols="50"
 						rows="10"
-						placeholder="Kommentar..."
+						placeholder="Fortæl os hvad du syntes..."
 					></textarea>
 				</div>
 				<button type="button" onClick={submitComment}>
 					Indsæt
 				</button>
 			</FormStyle>
-		</CommentStyle>
+
+			{comments
+				? comments.map((comment) => {
+						return (
+							<CommentStyle key={comment.id}>
+								<img src={pfp} alt="" />
+								<div>
+									<h5>
+										{comment.user.firstname} {comment.user.lastname}
+									</h5>
+									<h6>{comment.title}</h6>
+									<p>{comment.comment}</p>
+								</div>
+							</CommentStyle>
+						);
+				  })
+				: "Ingen kommentarer... vær den første til at skrive noget!"}
+		</CommentContainer>
 	);
 };

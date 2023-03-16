@@ -1,6 +1,30 @@
 import styled from "styled-components";
 
-export const CommentStyle = styled.div``;
+export const CommentStyle = styled.div`
+	border: 1px solid #dbdbdb;
+	padding: 2%;
+	max-width: 600px;
+	margin: 15px 0 15px 0;
+	display: flex;
+	gap: 25px;
+	h5 {
+		margin: 0;
+		font-size: 1.2rem;
+	}
+	h6 {
+		margin: 0;
+		font-size: 1.1rem;
+		font-style: italic;
+		font-weight: 400;
+	}
+
+	img {
+		width: 150px;
+		height: 150px;
+	}
+`;
+
+export const CommentContainer = styled.div``;
 
 export const FormStyle = styled.form`
 	textarea,
