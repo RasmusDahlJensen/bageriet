@@ -76,6 +76,7 @@ export const ProductDetails = () => {
 						<div>{ingredientsArr}</div>
 					</div>
 				</DetailFlexStyle>
+				{/* asda */}
 			</DetailFlexStyleTitle>
 		</PageStyle>
 	);
