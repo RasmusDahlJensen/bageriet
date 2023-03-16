@@ -68,7 +68,7 @@ export const ProductDetails = () => {
 									transform="translate(-2.875 -3.438)"
 									fill="none"
 									stroke="#6d8fab"
-									stroke-width="1"
+									strokeWidth="1"
 								/>
 							</svg>
 							<div>Like</div>
@@ -77,7 +77,6 @@ export const ProductDetails = () => {
 						<div>{ingredientsArr}</div>
 					</div>
 				</DetailFlexStyle>
-				{/* asda */}
 				<Comments />
 			</DetailFlexStyleTitle>
 		</PageStyle>

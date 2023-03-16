@@ -29,16 +29,22 @@ export const Comments = () => {
 	}, []);
 
 	const submitComment = (e) => {
+		//Posted information taken from the form and the login
 		let bodyParameters = {
+			title: `${e.target.form.title.value}`,
+			comment: `${e.target.form.comment.value}`,
 			user_id: `${userId}`,
 			product_id: `${params.prod_id}`,
-			title: "value",
-			comment: "value",
 			active: true,
 		};
+		console.log(bodyParameters);
+		console.log(config);
+		//Post comment
 
-		console.log(e.target.form.title.value);
-		console.log(e.target.form.comment.value);
+		axios
+			.post(url, config, bodyParameters)
+			.then(console.log)
+			.catch((err) => console.error(err));
 	};
 
 	return (
