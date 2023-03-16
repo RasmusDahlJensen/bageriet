@@ -16,13 +16,13 @@ export const Comments = () => {
 		headers: { Authorization: `Bearer ${accessToken}` },
 	};
 
-	let userUrl = `https://api.mediehuset.net/bakeonline/comments/1`;
+	let productUrl = `https://api.mediehuset.net/bakeonline/comments/${params.prod_id}`;
 	let commentUrl = `https://api.mediehuset.net/bakeonline/comments`;
 
 	const [comments, getComments] = useState([]);
 
 	useEffect(() => {
-		axios.get(userUrl, config).then((data) => {
+		axios.get(productUrl, config).then((data) => {
 			console.log(data);
 			getComments(data);
 			// console.log(comments);
