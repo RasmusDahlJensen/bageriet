@@ -9,6 +9,7 @@ import {
 } from "./Page.Style";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Comments } from "../Components/Comments/Comments";
 
 export const ProductDetails = () => {
 	const params = useParams();
@@ -77,6 +78,7 @@ export const ProductDetails = () => {
 					</div>
 				</DetailFlexStyle>
 				{/* asda */}
+				<Comments />
 			</DetailFlexStyleTitle>
 		</PageStyle>
 	);
