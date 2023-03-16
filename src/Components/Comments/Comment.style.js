@@ -24,7 +24,14 @@ export const CommentStyle = styled.div`
 	}
 `;
 
-export const CommentContainer = styled.div``;
+export const CommentContainer = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 150px;
+	h5 {
+		margin: 0;
+	}
+`;
 
 export const FormStyle = styled.form`
 	textarea,
