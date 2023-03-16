@@ -1,15 +1,65 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { CommentStyle } from "./Comment.style";
+import { CommentStyle, FormStyle } from "./Comment.style";
 import { AuthContext } from "../Login/AuthProvider";
+import axios from "axios";
 
 export const Comments = () => {
 	const params = useParams();
 	const { accessToken, setAccessToken } = useContext(AuthContext);
 	const { userId, setUserId } = useContext(AuthContext);
-	console.log(params);
-	console.log(accessToken);
-	console.log(userId);
+	// console.log(params);
+	// console.log(accessToken);
+	// console.log(userId);
 
-	return <CommentStyle>Comments</CommentStyle>;
+	const config = {
+		headers: { Authorization: `Bearer ${accessToken}` },
+	};
+
+	let url = `https://api.mediehuset.net/bakeonline/comments/${userId}`;
+
+	const [comments, getComments] = useState([]);
+
+	useEffect(() => {
+		axios.get(url, config).then((data) => {
+			// console.log(data);
+			getComments(data);
+			// console.log(comments);
+		});
+	}, []);
+
+	const submitComment = (e) => {
+		let bodyParameters = {
+			user_id: `${userId}`,
+			product_id: `${params.prod_id}`,
+			title: "value",
+			comment: "value",
+			active: true,
+		};
+
+		console.log(e.target.form.title.value);
+		console.log(e.target.form.comment.value);
+	};
+
+	return (
+		<CommentStyle>
+			<FormStyle>
+				<div className="title">
+					<input type="text" id="title" placeholder="Titel.." />
+				</div>
+				<div>
+					<textarea
+						name="comment"
+						id="comment"
+						cols="50"
+						rows="10"
+						placeholder="Kommentar..."
+					></textarea>
+				</div>
+				<button type="button" onClick={submitComment}>
+					Indsæt
+				</button>
+			</FormStyle>
+		</CommentStyle>
+	);
 };
