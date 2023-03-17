@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PageStyle = styled.div`
 	min-height: 90vh;
-
+	margin-bottom: 50px;
 	h5 {
 		font-size: 1.3rem;
 		margin: 10px;
