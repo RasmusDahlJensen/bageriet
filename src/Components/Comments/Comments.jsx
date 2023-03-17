@@ -86,7 +86,7 @@ export const Comments = () => {
 				<button onClick={submitComment}>Indsæt</button>
 			</FormStyle>
 
-			{comments
+			{comments && comments
 				? comments.map((comment) => {
 						return (
 							<CommentStyle key={comment.id}>
