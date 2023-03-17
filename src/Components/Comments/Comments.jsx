@@ -44,6 +44,8 @@ export const Comments = () => {
 			.post(commentUrl, bodyParameters, config)
 			.then(console.log)
 			.catch((err) => console.error(err));
+
+		// window.location.reload(false);
 	};
 
 	return (
@@ -81,9 +83,7 @@ export const Comments = () => {
 						placeholder="Fortæl os hvad du syntes..."
 					></textarea>
 				</div>
-				<button type="button" onClick={submitComment}>
-					Indsæt
-				</button>
+				<button onClick={submitComment}>Indsæt</button>
 			</FormStyle>
 
 			{comments
