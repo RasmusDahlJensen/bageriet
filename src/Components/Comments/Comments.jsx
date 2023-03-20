@@ -44,8 +44,6 @@ export const Comments = () => {
 			.post(commentUrl, bodyParameters, config)
 			.then(console.log)
 			.catch((err) => console.error(err));
-
-		// window.location.reload(false);
 	};
 
 	return (
