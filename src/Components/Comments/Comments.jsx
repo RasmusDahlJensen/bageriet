@@ -43,7 +43,7 @@ export const Comments = () => {
 		axios
 			.post(commentUrl, bodyParameters, config)
 			.then(console.log)
-			.catch((err) => console.error(err));
+			.catch((err) => console.error(`Can't post, axios error:`, err));
 	};
 
 	return (
