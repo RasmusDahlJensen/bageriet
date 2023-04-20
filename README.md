@@ -1,6 +1,4 @@
-# Projekt titel
-
-Bageriet
+# Bageriet
 
 # Beskrivelse
 
